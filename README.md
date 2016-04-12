@@ -6,7 +6,7 @@ Ecole 42 - Piscine PHP / Mysql / Html / Css / Javascript
 - d02 : 101/100 :)
 - d03 : 100/100 :)
 - d04 : 100/100 :)
-- rush00 :
+- rush00 : 117/100 :)
 - d05 : 
 - d06 : 
 - d07 : 
