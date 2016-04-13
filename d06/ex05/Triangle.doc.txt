@@ -1,0 +1,9 @@
+<- Triangle ----------------------------------------------------------------------
+The Triangle class handles 3xVertex.
+it's got a finite constante values for the preset :
+
+When a Triangle is created, you wont be able to change its values after.
+aka-> no setters;
+
+The following method are providing for this Class:
+---------------------------------------------------------------------- Triangle ->
