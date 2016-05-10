@@ -1,0 +1,78 @@
+<- Ship ----------------------------------------------------------------------
+'Ship' est un object que la map pourrais recevoir
+
+utilise le trait 'Convert'
+
+-> public function __Construct(*)
+Prend en parametre tous les parametre de la class.
+Crée une instance de la class en questions.
+
+-> public function turn ($dir)
+Methode qui permet la rotation de l'object sur la map.
+Doit recevoir en parametre -1 pour gauche ou 1 pour droite
+Appel la methode save pour sauvegarder l'état du 'ship'.
+
+-> public function stopMove()
+Méthode qui sera appeler quand le joueur arrête la phase de mouvement
+elle retire le speed disponible et passe l'object en step = 2;
+Appel la methode save pour sauvegarder l'état du 'ship'.
+
+-> public function move($case)
+Méthode qui sera appeler quand le joueur voudra avancer le 'ship'.
+Prend en paramètre le nombre de case souhaité.
+En cas de collision, elle appelera la fonction delete de l'object.
+Appel la methode save pour sauvegarder l'état du 'ship'.
+
+-> public function addShield()
+Méthode qui sera appeler quand le joueur ajoutera du shield temporairement à
+sont 'ship'.
+Contrôle qu'il y a assez de Point de puissance en stock
+Appel la methode save pour sauvegarder l'état du 'ship'.
+
+-> public function touch()
+Méthode qui sera appeler par Weapon quand un tir touche le 'ship' en question.
+Retire le Shield puis la Vie. Si la vie passe à 0, supprime le 'ship'
+Appel la methode save pour sauvegarder l'état du 'ship'.
+
+-> public function addSpeed()
+Méthode qui sera appeler quand le joueur ajoutera du speed temporrairement à
+sont 'ship' pendant la phase d'ordre.
+Contrôle qu'il y a assez de point de puissance en stock.
+Appel la methode save pour sauvegarder l'état du 'ship'.
+
+-> public function ppStop()
+Methode qui sera appeler quand le joueur souhaitera passe a l'étape de mouvement.
+elle change le step = 1
+Appel la methode save pour sauvegarder l'état du 'ship'.
+
+-> public function active()
+Méthode qui sera appeler quand le joueur activera sont 'ship'.
+Elle reset toutes les valeur par défaut.
+Appel la methode save pour sauvegarder l'état du 'ship'.
+
+-> public function wakeup()
+Methode qui sera appeler quand tout les 'ships' auront été joué pour permettre
+l'activation de celui là.
+Appel l'activation de toute ses 'weapons' liés.
+Appel la methode save pour sauvegarder l'état du 'ship'.
+
+-> private function delete()
+Méthode qui detruit le 'ship' en question.
+
+-> private function save()
+Méthode qui save l'état du 'ship' en question.
+
+-> public function getCaseFire(Int)
+Int WeaponId
+Méthode qui sera appeler lorsque le joueur activera une arme.
+Retourne l'ensemble des cases que l'arme touchera dans un tableau.
+Retourne false si il y a pas de case.
+
+
+-> public staic function doc()
+Permet d'afficher la doc.
+
+-> Getter et Setter suivant des besoins.
+
+Etat non définit en cas de passage d'arguments non souhaité.
+---------------------------------------------------------------------- Ship ->

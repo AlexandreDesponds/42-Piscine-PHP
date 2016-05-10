@@ -1,0 +1,34 @@
+{% for ship in ships %}
+    <div class="ship rot-{{ ship._currentRotation }}{% if ship._sleep == 1 %} sleep {% endif %}{% if ship._currentActive == 1 %} currentActive{% endif %}"
+         data-id="{{ ship._id }}"
+         style=" background-color: #{{ ship._color }};
+         {% if ship._currentRotation == 0 %}
+                 width: {{ ship._sizeY * 15 }}px;
+                 height: {{ ship._sizeX * 15 }}px;
+                 top: {{ (ship._y - ship._sizeX + 1) * 15 }}px;
+                 left: {{ ship._x * 15 }}px;
+         {% elseif ship._currentRotation == 90 %}
+                 width: {{ ship._sizeX * 15 }}px;
+                 height: {{ ship._sizeY * 15 }}px;
+                 top: {{ ship._y * 15 }}px;
+                 left: {{ ship._x * 15 }}px;
+         {% elseif ship._currentRotation == 180 %}
+                 width: {{ ship._sizeY * 15 }}px;
+                 height: {{ ship._sizeX * 15 }}px;
+                 top: {{ ship._y * 15 }}px;
+                 left: {{ (ship._x - ship._sizeY + 1) * 15 }}px;
+         {% elseif ship._currentRotation == 270 %}
+                 width: {{ ship._sizeX * 15 }}px;
+                 height: {{ ship._sizeY * 15 }}px;
+                 top: {{ (ship._y - ship._sizeY + 1) * 15 }}px;
+                 left: {{ (ship._x - ship._sizeX + 1) * 15 }}px;
+         {% endif %}
+                 ">
+         <div class="life" style="width:{{ ship._life * 15}}px">
+              <div class="currentLife" style="width:{{ ship._currentLife * 15}}px"></div>
+         </div>
+         <div class="shield" style="width:{{ ship._shield * 15}}px">
+              <div class="currentShield" style="width:{{ ship._currentShield * 15}}px"></div>
+         </div>
+    </div>
+{% endfor %}

@@ -1,0 +1,154 @@
+body{
+    margin:0px;
+    padding:0px;
+    font-family: Arial;
+}
+
+div.mapCadre{
+    position: absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:300px;
+    overflow: scroll;
+}
+
+div.info{
+    position: absolute;
+    height:300px;
+    left:0px;
+    right:50%;
+    bottom:0px;
+    background-color: #ffffff;
+    border-right:1px solid #000000;
+    text-align: center;
+}
+
+div.control{
+    position: absolute;
+    height:300px;
+    left:50%;
+    bottom:0px;
+    background-color: #ffffff;
+    width:50%;
+    overflow: scroll;
+}
+
+table.map{
+    border-collapse: collapse;
+    background-color: #150038
+}
+
+table.map td{
+    height:12px;
+    min-width:12px;
+    border: 1px solid #27006a;
+}
+
+table.map td.obstacle{
+    background-color: #27006a;
+}
+
+table.map td.active{
+    opacity: 0.4;
+}
+
+div.ship{
+    position: absolute;
+    z-index: 1;
+    cursor: help;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+div.ship.rot-0{
+    border-radius:10px 10px 0 0;
+}
+
+div.ship.rot-90{
+    border-radius:0 10px 10px 0;
+}
+
+div.ship.rot-180{
+    border-radius:0 0 10px 10px;
+}
+
+div.ship.rot-270{
+    border-radius:10px 0 0 10px;
+}
+
+
+div.ship div.life{
+     width:50px;
+     height:5px;
+     bottom: -10px;
+     background-color: #ffffff;
+     position: absolute;
+}
+
+div.ship div.currentLife{
+    height:5px;
+    background-color:red;
+}
+
+div.ship div.shield{
+    width:50px;
+    height:5px;
+    bottom: -20px;
+    background-color: #ffffff;
+    position: absolute;
+}
+
+div.ship div.currentShield{
+    height:5px;
+    background-color: #0000ff;
+}
+
+div.fire{
+    position: absolute;
+    z-index: 2;
+    height:15px;
+    width:15px;
+    opacity: 0.4;
+}
+
+div.fire-1{
+    background-color:red;
+}
+
+div.fire-2{
+    background-color:green;
+}
+
+div.fire-3{
+    background-color:blue;
+}
+
+div.ship.sleep{
+    opacity: 0.3;
+}
+
+div.ship.currentActive{
+    border:red 3px solid;
+}
+
+.actionButton{
+    padding:10px;
+    background-color: #b6ffe3;
+    text-align:center;
+    cursor: context-menu;
+    margin:0px !important;
+}
+
+.actionButton:hover{
+    background-color: #aaeed4;
+}
+
+.addCharge{
+    background-color: #cbffd0;
+}
+
+.addCharge:hover{
+    background-color: #aaeed4;
+}

@@ -1,0 +1,25 @@
+<- Obstacle ----------------------------------------------------------------------
+Obsacle est un element avec des coordonnée en X/Y qui sera sur la map
+
+extends de la class Square
+
+-> public function __construct(int, int)
+-> int = coordonné X
+-> int = coordonné Y
+Appel le constructeur de Square
+
+-> public static function generate (int, int)
+-> int = coordonné X
+-> int = coordonné Y
+Crée un instance de Obstacle et la sauvegarde dans la base de donnée
+
+-> public static function loadall()
+Methode qui permet de récuperer l'ensemble des obstacles disponible sur la map.
+Retourne un array contenant les valeurs des obstacles
+
+-> public staic function doc()
+Permet d'afficher la doc.
+
+Etat non définit en cas de passage d'arguments non souhaité.
+
+---------------------------------------------------------------------- Obstacle ->

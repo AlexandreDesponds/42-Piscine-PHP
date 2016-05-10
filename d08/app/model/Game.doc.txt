@@ -1,0 +1,29 @@
+<- Game ----------------------------------------------------------------------
+Class principal, elle contiendera les information du jeux ainsi que les règles
+du jeu
+
+-> public function __construct()
+Lors de la construction de l'object, il va construire un object Map et l'ajouté
+dans _map ainsi que la liste des 'ship' dans _ships.
+Fait appel a la fonction CheckEndTurn pour savoir si c'est la fin du tour et,
+dans ce cas, reset tout les 'ship'
+
+-> public function possibleActivation()
+Méthode qui sera appelé quand un joueur voudra activé un 'ship'. Controle si il
+peux le faire et retourn true dans ce cas, false sinon.
+
+-> private function checkEndTurn()
+Methode qui sera appelé à chaque construction de Game. Contrôle si tout les 'ships'
+ont fini leur tour, et dans se cas retourn true, sinon false.
+
+-> private function newTurn()
+Méthode qui appelera wakeup de l'ensemble des 'ship'. Est appelé en cas de
+nouveau tour
+
+-> public staic function doc()
+Permet d'afficher la doc.
+
+-> Getter et Setter suivant des besoins.
+
+Etat non définit en cas de passage d'arguments non souhaité.
+---------------------------------------------------------------------- Game ->

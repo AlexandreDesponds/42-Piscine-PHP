@@ -1,0 +1,35 @@
+<- Map ----------------------------------------------------------------------
+La map est l'endroit ou tout les obstacle et 'ship' seront rataché.
+
+En constante, elle contient la hauteur et la largeur souhaité de la map.
+
+-> public function __construct()
+Construit la map et insert une nouvelle instance fraiche de Square dans chaque case.
+La map est dans private $_map. C'est un array.
+
+-> public function initMap()
+Méthode qui généra un nouvelle map ainsi que des nouveau obstacle.
+Utilise les valeur de $_ratioObstacle, sizeMaxObstacle et sizeSafeZone pour
+crée aléatoirement les obstacles sur la map.
+
+-> private function addObstacle()
+Méthode qui va faire appel a la méthode static loadAll de Obstacle pour
+crée l'ensemble des obstacles et les mettres dans le paramètre prive _map.
+
+-> public function getCoord(int, int)
+int : X
+int : Y
+Méthode qui retourne l'objet qui est sur la position passé en paramètre.
+
+-> public function addShipMap(array)
+array : tableau de Ship
+Méthode qui va ajouté sur le paramètre privé _map l'ensemble des 'ship' présents en fonction de leurs
+rotation.
+
+-> public staic function doc()
+Permet d'afficher la doc.
+
+-> Getter et Setter suivant des besoins.
+
+Etat non définit en cas de passage d'arguments non souhaité.
+---------------------------------------------------------------------- Map ->

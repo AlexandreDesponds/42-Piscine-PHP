@@ -1,0 +1,7 @@
+{% for case in cases %}
+    <div class="fire{% if case.v == 1 %} fire-1{% endif %}{% if case.v == 2 %} fire-2{% endif %}{% if case.v == 3 %} fire-3{% endif %}"
+         style="
+                 top: {{ case.y * 15 }}px;
+                 left: {{ case.x * 15 }}px;
+                 "></div>
+{% endfor %}

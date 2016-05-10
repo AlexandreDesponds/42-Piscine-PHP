@@ -1,0 +1,21 @@
+<- Mysql ----------------------------------------------------------------------
+Est un Singleton de l'object PDO.
+Elle permet d'avoir qu'une seul instance de classe PDO.
+
+-> private function __construct()
+Constructeur privé.
+Créer un instance de class PDO et la stock dans la variable PDOinstance
+L'instance PDO sera connecté à la base de donnée.
+
+-> public static function getInstance()
+Sera appelé quand le programme devra avoir accès à l'instance PDO.
+
+-> public function query(string)
+-> string = query
+Execute la requète passée en paramètre.
+
+-> public staic function doc()
+Permet d'afficher la doc.
+
+Etat non définit en cas de passage d'arguments non souhaité.
+---------------------------------------------------------------------- Mysql ->

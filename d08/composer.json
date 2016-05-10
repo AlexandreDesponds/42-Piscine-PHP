@@ -1,0 +1,10 @@
+{
+  "require": {
+    "slim/slim": "2.*",
+    "slim/views": "0.1.*",
+    "twig/twig": "1.*"
+  },
+  "config": {
+    "vendor-dir": "vendor"
+  }
+}

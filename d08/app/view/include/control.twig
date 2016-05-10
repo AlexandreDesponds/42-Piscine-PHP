@@ -1,0 +1,39 @@
+{% if value.pp %}
+    <p>Solde de PP : {{ value.pp }}</p>
+{% endif %}
+{% if action.pp %}
+    <p>Solde de PP : {{ action.pp }}</p>
+{% endif %}
+{% if value.speed %}
+    <p>Speed pour la prochaine phase : {{ value.speed }}</p>
+{% endif %}
+{% if value.shield %}
+    <p>Shield pour la prochaine phase : {{ value.shield }}</p>
+{% endif %}
+{% if action.ppSpeed %}
+    <p id="ppSpeed" class="actionButton">[-1PP] 1D6 de speed</p>
+{% endif %}
+{% if action.ppShield %}
+    <p id="ppShield" class="actionButton">[-1PP] +1 Shield</p>
+{% endif %}
+{% if action.ppStop %}
+    <p id="ppStop" class="actionButton">Phase de mouvement</p>
+{% endif %}
+{% if action.rotation %}
+    <p id="turnLeft" class="actionButton">Tourner a gauche</p>
+    <p id="turnRight" class="actionButton">Tourner a droite</p>
+{% endif %}
+{% if action.weapons %}
+    {% for w in action.weapons %}
+        <p class="actionButton"><span class="weapon" data-id="{{ w.id }}">{{ w.name }} | Point de charge : {{ w.charge }} + {{ w.currentCharge }} </span><span class="addCharge" data-id="{{ w.id }}">+charge</span></p>
+    {% endfor %}
+{% endif %}
+{% if action.move %}
+    {% for i in action.move.min .. action.move.max %}
+        <p id="move" class="move actionButton" data-case="{{ i }}">Avancer de {{ i }} case</p>
+    {% endfor %}
+    <p id="stopMove" class="actionButton">Phase de tir</p>
+{% endif %}
+{% if action.fireStop %}
+    <p id="fireStop" class="actionButton">Fin de tour</p>
+{% endif %}

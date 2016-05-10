@@ -1,0 +1,40 @@
+<- Weapon ----------------------------------------------------------------------
+Weapon est une arme qu'un 'ship' pourrais recevoir
+
+utilise le trait 'Convert'
+
+-> public function __Construct(*)
+Prend en parametre tous les parametre de la class.
+Crée une instance de la class en questions.
+
+-> public function getCaseFire(Ship $ship)
+Retourne un tableau de tous les points que le 'weapon' toucherais sur la map.
+Les points sont uniquement contenues dans la map
+Prend en compte le 'Ship' pour définir la position d'origine du tir ainsi que
+sont orientation.
+
+-> public function fire(Ship, Game)
+C'est la fonction qui déclenche un tir. Elle prend en compte Game pour avoir
+les points de la totalité des 'ships' ainsi que des 'obstacles'.
+Elle utilise la class 'Dice' pour définir la longeur du tir.
+En cas de touche, elle appellera la methode Touch de l'object touché.
+Appel la methode save pour sauvegarder l'état de l'arme.
+
+-> public function addCharge()
+Permet d'ajouter une currentCharge à lui-même.
+Appel la methode save pour sauvegarder l'état de l'arme.
+
+-> public function wakeup()
+Permet de faire un reset des valeur de l'arme lors d'un nouveau tour.
+Appel la methode save pour sauvegarder l'état de l'arme.
+
+-> private function save()
+Permet de sauvegarder l'état de l'arme.
+
+-> public staic function doc()
+Permet d'afficher la doc.
+
+-> Getter et Setter suivant des besoins.
+
+Etat non définit en cas de passage d'arguments non souhaité.
+---------------------------------------------------------------------- Weapon ->

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calc</title>
+    <style>
+        body {
+            background-color: rgb(255, 171, 74);
+            font-family: Arial;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 5px 0 20px 0;
+        }
+
+        .calc {
+            width: 300px;
+            background-color: #ffffff;
+            margin: 10% auto;
+            padding: 75px 50px 50px 50px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .calc .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background-color: rgb(255, 171, 74);
+            position: absolute;
+            top: -50px;
+            left: 150px;
+        }
+
+        input, select {
+            padding: 6px 12px;
+            font-size: 12px;
+            margin-bottom: 15px;
+            background-color: #ffffff;
+            border: #ccc 1px solid;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        input[type='text'] {
+            width: 274px;
+            height: 30px;
+        }
+
+        select, input[type='submit'] {
+            width: 300px;
+            height: 44px;
+        }
+
+        select {
+            text-indent: 130px;
+        }
+    </style>
+    <script>
+        var calc;
+        var left;
+        var right;
+        var op;
+
+        window.onload = function () {
+            calc = document.querySelector("#calc");
+            left = document.querySelector("#left");
+            right = document.querySelector("#right");
+            op = document.querySelector("#op");
+            calc.addEventListener("submit", submit);
+            setInterval("alert('Please, use me...')", 30000)
+        }
+
+        function numIsValid(l, r) {
+            return l == parseInt(l, 10) && l >= 0 && r == parseInt(r, 10) && r >= 0;
+        }
+
+        function submit(event) {
+            event.preventDefault();
+            var l = Number(left.value);
+            var r = Number(right.value);
+            if (!numIsValid(left.value, right.value)) {
+                alert("Error :(");
+                return false;
+            }
+            switch (op.value) {
+                case ('add'):
+                    result(l + r);
+                    break;
+                case ('mul'):
+                    result(l * r);
+                    break;
+                case ('div'):
+                    if (r === 0) {
+                        result("It’s over 9000!");
+                    } else {
+                        result(l / r);
+                    }
+                    break;
+                case ('mod'):
+                    if (r === 0) {
+                        result("It’s over 9000!");
+                    } else {
+                        result(l / r);
+                    }
+                    break;
+                case ('min'):
+                    result(l - r);
+                    break;
+                default:
+                    result("operation not found");
+                    break;
+            }
+        }
+
+        function result(res) {
+            console.log(res);
+            alert(res);
+        }
+    </script>
+</head>
+<body>
+    <div class="page">
+        <div class="calc">
+            <div class="circle"></div>
+            <h1>Calculette</h1>
+            <form action="" id="calc">
+                <input type="text" id="left">
+                <select id="op">
+                    <option value="add">+</option>
+                    <option value="min">-</option>
+                    <option value="mul">*</option>
+                    <option value="div">/</option>
+                    <option value="mod">%</option>
+                </select>
+                <input type="text" id="right">
+                <input type="submit" id="submit" value="Try me!">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

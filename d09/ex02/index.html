@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To do or not to do</title>
+    <script src="todo.js"></script>
+    <style>
+        body {
+            font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.4em;
+            color: #4d4d4d;
+            background-color: #e5e5e5;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            position: absolute;
+            top: -100px;
+            width: 100%;
+            font-size: 70px;
+            font-weight: bold;
+            text-align: center;
+            color: #b3b3b3;
+            color: rgba(255, 255, 255, 0.3);
+            text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+            -webkit-text-rendering: optimizeLegibility;
+            -moz-text-rendering: optimizeLegibility;
+            -ms-text-rendering: optimizeLegibility;
+            -o-text-rendering: optimizeLegibility;
+            text-rendering: optimizeLegibility;
+        }
+
+        .todos {
+            width:500px;
+            background-color: #ffffff;
+            margin:150px auto 0 auto;
+            position: absolute;
+        }
+
+        .todos:before{
+            content: '';
+            width:500px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 15px;
+            z-index: 2;
+            border-bottom: 1px solid #6c615c;
+            background: #8d7d77;
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(132, 110, 100, 0.8)),to(rgba(101, 84, 76, 0.8)));
+            background: -webkit-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+            background: -moz-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+            background: -o-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+            background: -ms-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+            background: linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#9d8b83', EndColorStr='#847670');
+            border-top-left-radius: 1px;
+            border-top-right-radius: 1px;
+        }
+
+        #ft_list{
+            margin-top:15px;
+            font-size: 24px;
+        }
+
+        #ft_list:before {
+            content: '';
+            border-left: 1px solid #f5d6d6;
+            border-right: 1px solid #f5d6d6;
+            width: 2px;
+            position: absolute;
+            top: 0;
+            left: 40px;
+            height: 100%;
+        }
+
+        #ft_list div{
+            padding:10px 40px 10px 60px;
+            line-height: 40px;
+            border-bottom: 1px dotted #ccc;
+            position: relative;
+        }
+
+        #ft_list div:hover:after{
+            content:'x';
+            right: 15px;
+            position:absolute;
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        #ft_list div:before{
+            content:'➔';
+            left: 10px;
+            position:absolute;
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        button{
+            width:100%;
+            height:60px;
+            background-color:#ffffff;
+            border:0px solid #ffffff;
+            font-size:30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="todos">
+        <h1>TodoList</h1>
+        <div id="ft_list"></div>
+        <button id="new">New</button>
+    </div>
+</body>
+</html>

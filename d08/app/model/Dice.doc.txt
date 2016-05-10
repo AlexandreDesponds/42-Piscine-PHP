@@ -1,0 +1,17 @@
+<- Dice ----------------------------------------------------------------------
+Est un singleton. La class s'instencie uniquement lors de sont première
+appel à cast()
+
+Permet de faire un lance de dés.
+
+-> private function rand()
+Lance les dés. Retourne un valeur random entre les deux private
+static min et max (compris)
+
+-> public static function cast()
+Est l'unique appel possible de la class.
+Instancie l'object si c'est pas déja fait.
+Appel rand et retourn le resultat
+
+Etat non définit en cas de passage d'arguments non souhaité.
+---------------------------------------------------------------------- Dice ->

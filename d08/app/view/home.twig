@@ -1,0 +1,37 @@
+{% extends 'template/template.twig' %}
+{% block body %}
+    <div class="content">
+        <div class="mapCadre">
+            <table class="map">
+                {% if maps %}
+                    {% for i in 0..100 %}
+                        <tr>
+                            {% for y in 0..150 %}
+                                {% if maps[i][y]['type'] == 1 %}
+                                    <td class="obstacle"></td>
+                                {% elseif maps[i][y]['type'] == 2 %}
+                                    <td style="background-color:red"></td>
+                                {% else %}
+                                    <td></td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </table>
+        </div>
+        <div class="info" id="info">
+            <select id="player">
+                <option value="1">Player 1</option>
+                <option value="2">Player 2</option>
+            </select>
+            <h2 id="title">ddasd</h2>
+            <p>Position : <span id="x"></span>x / <span id="y"></span>y</p>
+            <p>Rotation : <span id="rotation"></span>°</p>
+            <p id="active" class="actionButton">Activer</p>
+        </div>
+        <div class="control" id="control">
+
+        </div>
+    </div>
+{% endblock %}

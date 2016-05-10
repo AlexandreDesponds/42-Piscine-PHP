@@ -1,0 +1,17 @@
+<- WeaponFactory ----------------------------------------------------------------------
+WeaponFactory est une factory d'instance de Weapon.
+
+Les constantes de class définissent les tables Mysql
+
+-> public static function loadHasShip(int $id)
+int $id -> ID du 'ship'
+Cette methode statique permet de récuperer les données tous les 'weapons'
+rattaché à une 'ship'
+retourne un array de tous les 'weapons'
+
+-> private static function create(array $a)
+array $a -> valeur du 'weapon' à créer
+
+-> public staic function doc()
+Permet d'afficher la doc.
+---------------------------------------------------------------------- WeaponFactory ->
